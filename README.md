@@ -127,11 +127,21 @@ repos.map(&:name)
 ```
 
 ### Request Body
-You can make requests with body using the `body` option:
+You can make requests with body using the `body` option, used commonly with POST, PUT and PATCH:
 
 ```ruby
 api = Blanket::wrap("http://api.example.org")
 api.messages.post(body: 'Hello')
+```
+
+```ruby
+api = Blanket::wrap("http://api.example.org")
+api.messages.put(body: {property: 'New Value'})
+```
+
+```ruby
+api = Blanket::wrap("http://api.example.org")
+api.messages.patch(body: {property: 'Updated value'})
 ```
 
 ### Request Parameters
